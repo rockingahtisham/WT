@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .column {
+      float: left;
+      width: 40%;
+      padding: 0 10px;
+    }
+
+    /* Remove extra left and right margins, due to padding in columns */
+    .row {
+      margin: 0 -5px;
+      padding-top: 50px;
+      padding-left: 25%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+      .row {
+        margin: 0 -5px;
+        padding-top: 50px;
+        padding-left: 13%;
+      }
+    }
+  </style>
+  <body>
+    <center>
+      <h3
+        style="
+          font-family: sans-serif;
+          padding-top: 0.3in;
+          padding-bottom: 0.3in;
+        "
+      >
+        If you are Mr. Mubashar Khattana, Welcome!
+      </h3>
+    </center>
+
+    <div class="row">
+      <div class="column">
+        <div class="card" style="max-width: 18rem">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h5 class="card-title">M. Ahtisham Ul Haq</h5>
+            <h6 class="card-title">2021-CS-548</h6>
+            <p class="card-text">Select the assignment you want to check</p>
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Assignments
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="Assignment 1a.html"
+                    >Assignment 1</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Assignment 2a.html"
+                    >Assignment 2</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="Assignment 3a.html"
+                    >Assignment 3</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card" style="max-width: 18rem">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h5 class="card-title">Dawood Ahmed Butt</h5>
+            <h6 class="card-title">2021-CS-530</h6>
+            <p class="card-text">Select the assignment you want to check</p>
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-primary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Assignments
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Assignment 1</a></li>
+                <li><a class="dropdown-item" href="#">Assignment 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

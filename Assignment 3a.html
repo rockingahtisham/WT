@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Scenario Form</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Multi-Scenario Form</h1>
+      <div class="card">
+        <div class="card-body">
+          <div class="form-scenario" id="scenario1">
+            <h2 class="card-title">Job Application</h2>
+            <form action="#">
+              <!-- Form fields for Scenario 1 -->
+              <form>
+                <div class="form-group">
+                  <label for="name1">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name1"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="resume1">Upload Resume</label>
+                  <input type="file" class="form-control-file" id="resume1" />
+                </div>
+              </form>
+              <button type="button" class="btn btn-primary next">Next</button>
+            </form>
+          </div>
+
+          <div class="form-scenario" id="scenario2" style="display: none">
+            <h2 class="card-title">Personal information</h2>
+            <form action="#">
+              <!-- Form fields for Scenario 2 -->
+              <form>
+                <div class="form-group">
+                  <label for="name2">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name2"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email2">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email2"
+                    placeholder="Enter your email"
+                  />
+                </div>
+              </form>
+              <button type="button" class="btn btn-primary prev">Back</button>
+              <button type="button" class="btn btn-primary next">Next</button>
+            </form>
+          </div>
+
+          <div class="form-scenario" id="scenario3" style="display: none">
+            <h2 class="card-title">Rental Application</h2>
+            <form action="#">
+              <!-- Form fields for Scenario 3 -->
+              <form>
+                <div class="form-group">
+                  <label for="name3">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name3"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="rentalInfo">Rental Info</label>
+                  <textarea
+                    class="form-control"
+                    id="rentalInfo"
+                    rows="4"
+                    placeholder="Enter rental information"
+                  ></textarea>
+                </div>
+              </form>
+              <button type="button" class="btn btn-primary prev">Back</button>
+              <button type="button" class="btn btn-primary next">Next</button>
+            </form>
+          </div>
+
+          <div class="form-scenario" id="scenario4" style="display: none">
+            <h2 class="card-title">Event Registration</h2>
+            <form action="#">
+              <!-- Form fields for Scenario 4 -->
+              <form>
+                <div class="form-group">
+                  <label for="eventName">Event Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eventName"
+                    placeholder="Enter event name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="participants">Number of Participants</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="participants"
+                    placeholder="Enter number of participants"
+                  />
+                </div>
+              </form>
+              <button type="button" class="btn btn-primary prev">Back</button>
+              <button
+                style="color: aliceblue"
+                type="submit"
+                class="btn bg-success"
+              >
+                submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".next").click(function () {
+          const currentForm = $(this).closest(".form-scenario");
+          currentForm.hide();
+          currentForm.next().show();
+        });
+
+        $(".prev").click(function () {
+          const currentForm = $(this).closest(".form-scenario");
+          currentForm.hide();
+          currentForm.prev().show();
+        });
+      });
+    </script>
+  </body>
+</html>
