@@ -13,6 +13,37 @@
   <body>
     <div class="container mt-5">
       <h1 class="text-center">Multi-Scenario Form</h1>
+      <!-- Navigation Buttons -->
+      <div class="text-center mb-4">
+        <button
+          type="button"
+          class="btn btn-primary switch-scenario"
+          data-scenario="scenario1"
+        >
+          Step 1
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary switch-scenario"
+          data-scenario="scenario2"
+        >
+          Step 2
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary switch-scenario"
+          data-scenario="scenario3"
+        >
+          Step 3
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary switch-scenario"
+          data-scenario="scenario4"
+        >
+          Step 4
+        </button>
+      </div>
       <div class="card">
         <div class="card-body">
           <div class="form-scenario" id="scenario1">
@@ -141,16 +172,36 @@
 
     <script>
       $(document).ready(function () {
-        $(".next").click(function () {
-          const currentForm = $(this).closest(".form-scenario");
-          currentForm.hide();
-          currentForm.next().show();
+        // Function to switch between scenarios
+        function switchScenario(scenarioId) {
+          $(".form-scenario").hide();
+          $("#" + scenarioId).show();
+        }
+
+        // Event handler for scenario navigation buttons
+        $(".switch-scenario").click(function () {
+          const targetScenario = $(this).data("scenario");
+          switchScenario(targetScenario);
         });
 
+        // Event handler for "Next" buttons
+        $(".next").click(function () {
+          const currentForm = $(this).closest(".form-scenario");
+          const nextScenario = currentForm.next(".form-scenario");
+          if (nextScenario.length > 0) {
+            currentForm.hide();
+            nextScenario.show();
+          }
+        });
+
+        // Event handler for "Back" buttons
         $(".prev").click(function () {
           const currentForm = $(this).closest(".form-scenario");
-          currentForm.hide();
-          currentForm.prev().show();
+          const prevScenario = currentForm.prev(".form-scenario");
+          if (prevScenario.length > 0) {
+            currentForm.hide();
+            prevScenario.show();
+          }
         });
       });
     </script>
